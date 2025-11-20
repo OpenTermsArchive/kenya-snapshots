@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
+    <!-- Adjust SDK -->
+            <script  type="text/javascript" src="/js/vendor/adjust-5.7.2.min.js?v3.22.1.1"></script>
+        <script>
+  var AdjustSDK = {
+    ready: false,
+    trackEvent: function(token) {
+      if (AdjustSDK.ready) {
+        try {
+          Adjust.trackEvent({ eventToken: token });
+        } catch (e) {
+          console.error("Adjust SDK event cannot be tracked. Error: " + e);
+        }
+      } else {
+        console.error('Adjust SDK is not ready. Cannot track event');
+      }
+    },
+    init: function() {
+      try {
+        Adjust.initSdk({
+          appToken: "22zu45wl1oe8",
+          environment: "production",
+          logLevel: "none",
+        });
+        AdjustSDK.ready = true;
+      } catch (e) {
+        console.error("Adjust SDK cannot be initialized: " + e);
+      }
+    }
+  };
+  AdjustSDK.init();
+
+  </script>
+        <!-- End of Adjust SDK -->
     <script>
     window.dataLayer =  window.dataLayer || [];
     var AppAnalytics = {
@@ -165,10 +198,10 @@
     <meta name="msapplication-navbutton-color" content="#1F4255">
     <meta name="apple-itunes-app" content="app-id=id1397869645" />
     <title>Terms and Conditions | SportPesa Online| Sports Betting Kenya</title>
-    <link rel="stylesheet" href="/css/compiled/app3-2be2bcf.css?v3.22.0.1">
+    <link rel="stylesheet" href="/css/compiled/app3-bb07fae.css?v3.22.1.1">
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v3.22.0.1"/>
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v3.22.0.1"/>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v3.22.1.1"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v3.22.1.1"/>
             <meta name="robots" content="index, follow" />
     </head>
 <body ng-app="Sportpesa" ng-strict-di locale="en" id="page-static_terms_and_conditions">
@@ -180,11 +213,11 @@
     <div class="print-header">
         <ul class="logo">
             <li>
-                                <img class="print-logo lazy" lazy-src="/img/print/logo.png?v3.22.0.1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" alt="Online sports betting" />
+                                <img class="print-logo lazy" lazy-src="/img/print/logo.png?v3.22.1.1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" alt="Online sports betting" />
                 <span class="print-country">Kenya</span>
                 <div class="print-jackpot-partnership">Ithotho (Pty) Ltd</div>
             </li>
-                                                <li><clock server-time="1763573403" format="dddd, MMMM, Do, YYYY - HH:mm "></clock></li>
+                                                <li><clock server-time="1763616603" format="dddd, MMMM, Do, YYYY - HH:mm "></clock></li>
         </ul>
 
                     <div class="howtoregister">
@@ -222,7 +255,7 @@
                     <!-- 01.1 logo -->
                     <div class='logo'>
                         <a href="/en/sports-betting/football-1/">
-                                                         <span class="lazy-main-logo lazy country-ke" lazy-src="/img/logo_ke.png?v3.22.0.1">SportPesa</span>
+                                                         <span class="lazy-main-logo lazy country-ke" lazy-src="/img/logo_ke.png?v3.22.1.1">SportPesa</span>
                         </a>
                     </div>
                     <!-- 01.2 jackpot information -->
@@ -268,9 +301,9 @@
                 
                 
     <!-- 01.4 tools -->
-                                                                                                                                                                                    
+                                                                                                                                                                                                                
         
-        <navigation-bar sections="[{&quot;title&quot;:&quot;insights&quot;,&quot;icon&quot;:&quot;insights&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;https:\/\/ls.sir.sportradar.com\/sportpesa&quot;,&quot;title&quot;:&quot;live_score&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/blog.ke.sportpesa.com&quot;,&quot;title&quot;:&quot;blog&quot;,&quot;icon&quot;:&quot;blog&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/sportpesanews.com\/&quot;,&quot;title&quot;:&quot;news&quot;,&quot;icon&quot;:&quot;news&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;\/results&quot;,&quot;title&quot;:&quot;results&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;results&quot;}],&quot;active&quot;:false},{&quot;title&quot;:&quot;apps&quot;,&quot;icon&quot;:&quot;mobile&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;\/app&quot;,&quot;title&quot;:&quot;sports_app&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;\/casino-app&quot;,&quot;title&quot;:&quot;casino_app&quot;,&quot;icon&quot;:&quot;casino&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;https:\/\/www.sportpesascore.com\/&quot;,&quot;title&quot;:&quot;sp_score_app&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;}]}]" server-time="1763573403">
+        <navigation-bar sections="[{&quot;title&quot;:&quot;insights&quot;,&quot;icon&quot;:&quot;insights&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;https:\/\/ls.sir.sportradar.com\/sportpesa&quot;,&quot;title&quot;:&quot;live_score&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/blog.ke.sportpesa.com&quot;,&quot;title&quot;:&quot;blog&quot;,&quot;icon&quot;:&quot;blog&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/sportpesanews.com\/&quot;,&quot;title&quot;:&quot;news&quot;,&quot;icon&quot;:&quot;news&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;\/results&quot;,&quot;title&quot;:&quot;results&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;results&quot;}],&quot;active&quot;:false},{&quot;title&quot;:&quot;apps&quot;,&quot;icon&quot;:&quot;mobile&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;\/app&quot;,&quot;title&quot;:&quot;sports_app&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;\/casino-app&quot;,&quot;title&quot;:&quot;casino_app&quot;,&quot;icon&quot;:&quot;casino&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;https:\/\/www.sportpesascore.com\/&quot;,&quot;title&quot;:&quot;sp_score_app&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;}]}]" server-time="1763616603">
             <div class="tools tools-ke compact" id="tools">
                 <div class='container-fluid'>
                     <div class='row'>
@@ -305,6 +338,11 @@
                                                                             <li class="menu-item ">
                                                                                                                                             <a href="/en/mega-jackpot-pro" title="Jackpots" class="jackpot">
                                                     <span>Jackpots</span>
+                                                </a>
+                                                                                    </li>
+                                                                            <li class="menu-item ">
+                                                                                                                                            <a href="/en/lucky-betting-numbers" title="Lucky Numbers" class="lucky_numbers">
+                                                    <span>Lucky Numbers</span>
                                                 </a>
                                                                                     </li>
                                                                             <li class="menu-item ">
@@ -384,7 +422,7 @@
             
                         
     <mj-sticky-prize-banner 
-        server-time="1763573403"
+        server-time="1763616603"
         cookie-user-currency=""
     ></mj-sticky-prize-banner>
 
@@ -463,6 +501,18 @@
             >
                 <span class="jackpot menu-section-icon-ke"></span>
                 Jackpots
+            </a>
+        </li>
+    
+                                                                                        <li>
+                        <a href="/en/lucky-betting-numbers"
+               new-menu-section="luckynumbers"
+               ng-attr-section-name="luckynumbers"
+               casino-games-chip
+               class=""
+            >
+                <span class="lucky_numbers menu-section-icon-ke"></span>
+                Lucky Numbers
             </a>
         </li>
     
@@ -619,7 +669,7 @@
         </div>
             </div>
     <div class="lp-loading">
-        <img alt="loader" src="/img/quickbet-status/loader_dark.gif?v3.22.0.1" style="vertical-align:bottom;opacity:0.8;" width="20" height="20">
+        <img alt="loader" src="/img/quickbet-status/loader_dark.gif?v3.22.1.1" style="vertical-align:bottom;opacity:0.8;" width="20" height="20">
         Loading, trying to redirect to <span class="lp-country-name"></span>...
     </div>
 </section>
@@ -633,7 +683,7 @@
     <div id="content-block" ng-show="!nav.countries && !nav.selectedCountry && (!nav.topLeagues || nav.league)">
         
 
-    <top-banners section="home" top-class="""></top-banners>
+    <top-banners section="home" top-class=""></top-banners>
 
 
     <!-- main viewport -->
@@ -654,7 +704,7 @@
                     </div>
                 </div>
                                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 right_menu">
-            <a id='betslip-anchor' name='betslip'></a>
+            <a id='betslip-anchor'></a>
         <div class="skeleton skeleton-betslip betslip-v2">
     <div class="betslip-header">
         <div class="betslip-row">
@@ -670,11 +720,11 @@
                                             <p>Your account/reference number should be your registered number.</p>
                                     <ul>
                                             <li class='mpesa'>
-                            <span class="lazy" lazy-src="/img/paybills/mpesa.png?v3.22.0.1"></span>
+                            <span class="lazy" lazy-src="/img/paybills/mpesa.png?v3.22.1.1"></span>
                             <span>955100 or 5212121</span>
                         </li>
                                             <li class='airtelmoney'>
-                            <span class="lazy" lazy-src="/img/paybills/airtelmoney.png?v3.22.0.1"></span>
+                            <span class="lazy" lazy-src="/img/paybills/airtelmoney.png?v3.22.1.1"></span>
                             <span>955100 or SPORTPESA</span>
                         </li>
                                     </ul>
@@ -953,7 +1003,7 @@
                     <view-changer mobile-device=""></view-changer>
                 </p>
                 <p>Copyright © 2025 Kentech S.L.U. – All rights reserved ®</p>
-                                    <p class="version-display">Version: 3.22.0.1 2025-10-30</p>
+                                    <p class="version-display">Version: 3.22.1.1 2025-11-11</p>
                             </div>
         </div>
     </div>
@@ -1099,11 +1149,11 @@
         live_enabled: 1,
         locale: 'en',
         login_path: '/login',
-        menu_sections: {"live":{"name":"live","routes":["app_live_home"],"title":"live_games","icon":"livegames"},"casino":{"name":"casino","routes":["casino_app","casino_game","casino_category"],"title":"casino","icon":"casino"},"virtuals":{"name":"virtuals","routes":["casino_virtuals","casino_virtuals_game","casino_virtuals_category"],"title":"virtuals","icon":"virtuals"},"casino_aviator":{"name":"casino_aviator","routes":["casino_aviator"],"title":"aviator","icon":"aviator"},"combijackpots":{"name":"combijackpots","routes":["app_combi_jackpots"],"title":"jackpots","icon":"jackpot"}},
+        menu_sections: {"live":{"name":"live","routes":["app_live_home"],"title":"live_games","icon":"livegames"},"casino":{"name":"casino","routes":["casino_app","casino_game","casino_category"],"title":"casino","icon":"casino"},"virtuals":{"name":"virtuals","routes":["casino_virtuals","casino_virtuals_game","casino_virtuals_category"],"title":"virtuals","icon":"virtuals"},"casino_aviator":{"name":"casino_aviator","routes":["casino_aviator"],"title":"aviator","icon":"aviator"},"combijackpots":{"name":"combijackpots","routes":["app_combi_jackpots"],"title":"jackpots","icon":"jackpot"},"luckynumbers":{"name":"luckynumbers","routes":["app_lucky_numbers"],"title":"lucky_numbers","icon":"lucky_numbers"}},
         main_menu_section: {"name":"prematch","routes":["homepage"],"title":"sports","icon":"home"},
         new_menu_sections: ["casino_aviator","combijackpots"],
-        grouped_menu_sections: [["live","casino_aviator","casino","virtuals","combijackpots"]],
-        bet_history_menu_sections: ["live","combijackpots","casino"],
+        grouped_menu_sections: [["live","casino_aviator","casino","virtuals","combijackpots","luckynumbers"]],
+        bet_history_menu_sections: ["live","combijackpots","casino","luckynumbers"],
         new_casino_games: 1,
         number_format: {"decimal_places":2,"decimal_point":".","thousands_separator":","},
         markets_groups: {"prematch":{"1":{"main":[10,56,43,46,42,47],"goals":[56,43,332,203,258,45,284,328,208,386,202,353,352,52,54],"half_time":[42,203,284,328,53,54]}}},
@@ -1111,7 +1161,7 @@
         megajackpot_enabled: 0,
         multi_jackpot_enabled: 1,
         combi_jackpots_enabled: 1,
-        lucky_numbers_enabled: 0,
+        lucky_numbers_enabled: 1,
         moment_formats: {"date":"DD\/MM\/YY","time":"HH:mm","dateTime":"DD\/MM\/YY HH:mm","longDate":"DD MMM YYYY"},
         sms_content_enabled: 1,
         socket_url: 'https://realtime-notificator.ke.sportpesa.com',
@@ -1122,7 +1172,7 @@
         user_id: '',
         user_country_code: 'ke',
         user_has_placed_bets: 'first time bet',
-        version: '3.22.0.1',
+        version: '3.22.1.1',
         multi_jackpot_iframe_url: 'https://jackpot-widget.ke.sportpesa.com/',
         homepage_route_name: 'homepage',
         homepage_route_path: '/en/sports-betting/football-1/',
@@ -1174,7 +1224,9 @@
         reset_with_token: 0,
         sitemap_host: 'ke.sportpesa.com',
         jackpot_countdown_time: 24,
-        capitec_peach_js_url: ''
+        capitec_peach_js_url: '',
+        adjust_id: '22zu45wl1oe8',
+        adjust_event_tokens: {"casino_app_download":"mir7s3","initiate_android_app_download":"opzuep","initiate_ios_app_download":"1ua75v","initiate_deposit":"wco9ok","successful_deposit":"eb5b8y","live_bet":"mx4s34","megajackpot_bet":"754sif","midweek_jackpot_bet":"399fkg","prematch_bet":"9s5wqm","successful_bet":"g31j4i","successful_login":"rkgxbq","start_registration":"gl7q0p","successful_registration":"2ed7kk","goalrush_play":"hfxkjq","lucky_numbers_bet":"55jwti","play_casino":"h10ovr","play_virtual":"xwj0u5"}
     };
     var sessionExpired = "";
     var _T = []; </script>
@@ -1261,14 +1313,14 @@
         </script>
 
                                         
-                    <script type="text/javascript" src="/js/compiled/vendors-b039f79.js?v3.22.0.1"></script>
+                    <script type="text/javascript" src="/js/compiled/vendors-b039f79.js?v3.22.1.1"></script>
         
-                        <script src="/routes_v3.22.0.1.js?callback=fos.Router.setData"></script>
+                        <script src="/routes_v3.22.1.1.js?callback=fos.Router.setData"></script>
         
                 
-        <script type="text/javascript" src="/i18n/ngLocale-1.7.3/angular-locale_en.js?v3.22.0.1"></script>
+        <script type="text/javascript" src="/i18n/ngLocale-1.7.3/angular-locale_en.js?v3.22.1.1"></script>
 
-                    <script type="text/javascript" src="/js/compiled/app-651b921.js?v3.22.0.1"></script>
+                    <script type="text/javascript" src="/js/compiled/app-248678e.js?v3.22.1.1"></script>
         
                                     <script>
         var schema = {
