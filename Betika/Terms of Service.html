@@ -2,7 +2,7 @@
 <html lang="en-KE">
 <head>
     <!-- Adjust SDK -->
-            <script  type="text/javascript" src="/js/vendor/adjust-5.7.2.min.js?v3.22.1.11"></script>
+            <script  type="text/javascript" src="/js/vendor/adjust-5.7.2.min.js?v3.22.1.5"></script>
         <script>
   var AdjustSDK = {
     ready: false,
@@ -198,13 +198,39 @@
     <meta name="msapplication-navbutton-color" content="#1F4255">
     <meta name="apple-itunes-app" content="app-id=id1397869645" />
     <title>Terms and Conditions | SportPesa Online| Sports Betting Kenya</title>
-    <link rel="stylesheet" href="/css/compiled/app3-650db96.css?v3.22.1.11">
+    <link rel="stylesheet" href="/css/compiled/app3-71dd8df.css?v3.22.1.5">
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v3.22.1.11"/>
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v3.22.1.11"/>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v3.22.1.5"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v3.22.1.5"/>
             <meta name="robots" content="index, follow" />
-    </head>
-<body ng-app="Sportpesa" ng-strict-di locale="en" id="page-static_terms_and_conditions">
+    
+    <script>
+        window.InsiderQueue = window.InsiderQueue || [];
+    </script>
+
+    <script src="//sportpesakenyamena.api.useinsider.com/ins.js?id=10013792"></script>
+
+    <script>
+        window.InsiderQueue.push({
+            type: 'user',
+            value: {
+                uuid: "",
+                email: "",
+                phone_number:                     "+"
+                ,
+                custom: {
+                    operator_id: 0
+                }
+            }
+        });
+
+        window.InsiderQueue.push({
+            type: 'init'
+        });
+    </script>
+
+</head>
+<body ng-app="Sportpesa" ng-controller="InsiderController as Insider" ng-strict-di locale="en" id="page-static_terms_and_conditions">
 <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZJ4566Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Google Tag Manager (noscript) -->
@@ -213,11 +239,11 @@
     <div class="print-header">
         <ul class="logo">
             <li>
-                                <img class="print-logo lazy" lazy-src="/img/print/logo.png?v3.22.1.11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" alt="Online sports betting" />
+                                <img class="print-logo lazy" lazy-src="/img/print/logo.png?v3.22.1.5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" alt="Online sports betting" />
                 <span class="print-country">Kenya</span>
                 <div class="print-jackpot-partnership">Ithotho (Pty) Ltd</div>
             </li>
-                                                <li><clock server-time="1773073807" format="dddd, MMMM, Do, YYYY - HH:mm "></clock></li>
+                                                <li><clock server-time="1773117007" format="dddd, MMMM, Do, YYYY - HH:mm "></clock></li>
         </ul>
 
                     <div class="howtoregister">
@@ -255,7 +281,7 @@
                     <!-- 01.1 logo -->
                     <div class='logo'>
                         <a href="/en/sports-betting/football-1/">
-                                                         <span class="lazy-main-logo lazy country-ke" lazy-src="/img/logo_ke.png?v3.22.1.11">SportPesa</span>
+                                                         <span class="lazy-main-logo lazy country-ke" lazy-src="/img/logo_ke.png?v3.22.1.5">SportPesa</span>
                         </a>
                     </div>
                     <!-- 01.2 jackpot information -->
@@ -264,9 +290,9 @@
                     </div>
                     <!-- 01.3 user information -->
                     <!-- 01.2 login form -->
-<div class='login'>
+<div class="login">
         <div class="lp-link">
-        <a href="#">
+        <a href="#" ng-click="Insider.action('language')">
             <span class="icon country-icon"></span>&nbsp;Language 
         </a>
     </div>
@@ -275,11 +301,31 @@
     <form id="secondary_login" name="form" class="css-form" action="/login_check" method="post">
                 <input type="hidden" name="_target_path" value="https://www.ke.sportpesa.com/terms_and_conditions" />
         <label for='username'>Mobile</label>
-        <input id="username" name="username" class="mobile" placeholder="Mobile" type="text" maxlength="14" required="required" data-qa="common-login-username"/>
+        <input
+            id="username"
+            name="username"
+            class="mobile"
+            placeholder="Mobile"
+            type="text" maxlength="14"
+            required="required" data-qa="common-login-username"
+            ng-blur="Insider.actionMainLoginMethod($event.target.value)"
+        />
         <label for='password'>Password</label>
         <input id="password" name="password" placeholder="Password" type="password" maxlength="20" required="required" data-qa="common-login-password">
-        <input type="submit" value="Login" data-qa="common-login-submit">
-        <a class="btn-register" href="/join" data-qa="common-login-register">Register</a>
+        <input
+            type="submit"
+            value="Login"
+            data-qa="common-login-submit"
+            ng-click="Insider.action('mainLogin')"
+        />
+        <a
+            class="btn-register"
+            href="/join"
+            data-qa="common-login-register"
+            ng-click="Insider.action('mainRegister')"
+        >
+            Register
+        </a> 
     </form>
     <ul class="login-errors" style="display:none"></ul>
 
@@ -287,7 +333,7 @@
             <a href='/profile/resetpassword' id='retrieve-password'>
                             <span>Already using SportPesa via SMS or USSD?</span>
                 <span> – </span>
-                        <span>Forgot your password?</span>
+                        <span ng-click="Insider.action('forgotPassword')">Forgot your password?</span>
         </a>
     </div>
                 </div>
@@ -303,7 +349,7 @@
     <!-- 01.4 tools -->
                                                                                                                                                                                                                 
         
-        <navigation-bar sections="[{&quot;title&quot;:&quot;insights&quot;,&quot;icon&quot;:&quot;insights&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;https:\/\/ls.sir.sportradar.com\/sportpesa&quot;,&quot;title&quot;:&quot;live_score&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/blog.ke.sportpesa.com&quot;,&quot;title&quot;:&quot;blog&quot;,&quot;icon&quot;:&quot;blog&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/sportpesanews.com\/&quot;,&quot;title&quot;:&quot;news&quot;,&quot;icon&quot;:&quot;news&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;\/results&quot;,&quot;title&quot;:&quot;results&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;results&quot;}],&quot;active&quot;:false},{&quot;title&quot;:&quot;apps&quot;,&quot;icon&quot;:&quot;mobile&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;\/app&quot;,&quot;title&quot;:&quot;sports_app&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;\/casino-app&quot;,&quot;title&quot;:&quot;casino_app&quot;,&quot;icon&quot;:&quot;casino&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;https:\/\/www.sportpesascore.com\/&quot;,&quot;title&quot;:&quot;sp_score_app&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;}]}]" server-time="1773073807">
+        <navigation-bar sections="[{&quot;title&quot;:&quot;insights&quot;,&quot;icon&quot;:&quot;insights&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;https:\/\/ls.sir.sportradar.com\/sportpesa&quot;,&quot;title&quot;:&quot;live_score&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/blog.ke.sportpesa.com&quot;,&quot;title&quot;:&quot;blog&quot;,&quot;icon&quot;:&quot;blog&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;https:\/\/sportpesanews.com\/&quot;,&quot;title&quot;:&quot;news&quot;,&quot;icon&quot;:&quot;news&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;},{&quot;url&quot;:&quot;\/results&quot;,&quot;title&quot;:&quot;results&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;results&quot;}],&quot;active&quot;:false},{&quot;title&quot;:&quot;apps&quot;,&quot;icon&quot;:&quot;mobile&quot;,&quot;subsections&quot;:[{&quot;url&quot;:&quot;\/app&quot;,&quot;title&quot;:&quot;sports_app&quot;,&quot;icon&quot;:&quot;livescore&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;\/casino-app&quot;,&quot;title&quot;:&quot;casino_app&quot;,&quot;icon&quot;:&quot;casino&quot;,&quot;sref&quot;:&quot;results&quot;},{&quot;url&quot;:&quot;https:\/\/www.sportpesascore.com\/&quot;,&quot;title&quot;:&quot;sp_score_app&quot;,&quot;icon&quot;:&quot;results&quot;,&quot;sref&quot;:&quot;&quot;,&quot;target&quot;:&quot;_blank&quot;}]}]" server-time="1773117007">
             <div class="tools tools-ke compact" id="tools">
                 <div class='container-fluid'>
                     <div class='row'>
@@ -422,7 +468,7 @@
             
                         
     <mj-sticky-prize-banner 
-        server-time="1773073807"
+        server-time="1773117007"
         cookie-user-currency=""
     ></mj-sticky-prize-banner>
 
@@ -643,7 +689,11 @@
     <div class="mobile-scroll-clear"></div>
 </div>
                 <div id="lp-swal-html">
-            <section class="location-preferences" data-trigger="" data-auto-redirect="1">
+            <section
+    class="location-preferences"
+    data-trigger=""
+    data-auto-redirect="1"
+>
         <div class="lp-content">
         
         
@@ -660,7 +710,7 @@
                                                                                             
                                                                                                             <li data-href="/language/sw"
                                 class=""
-                                                                    onclick="window.location.href=$(this).data('href');"
+                                                                    onclick="Insider.actionSelectedLanguage('sw'); window.location.href=$(this).data('href');"
                                                             >
                                 Kiswahili
                             </li>
@@ -669,7 +719,7 @@
         </div>
             </div>
     <div class="lp-loading">
-        <img alt="loader" src="/img/quickbet-status/loader_dark.gif?v3.22.1.11" style="vertical-align:bottom;opacity:0.8;" width="20" height="20">
+        <img alt="loader" src="/img/quickbet-status/loader_dark.gif?v3.22.1.5" style="vertical-align:bottom;opacity:0.8;" width="20" height="20">
         Loading, trying to redirect to <span class="lp-country-name"></span>...
     </div>
 </section>
@@ -720,11 +770,11 @@
                                             <p>Your account/reference number should be your registered number.</p>
                                     <ul>
                                             <li class='mpesa'>
-                            <span class="lazy" lazy-src="/img/paybills/mpesa.png?v3.22.1.11"></span>
+                            <span class="lazy" lazy-src="/img/paybills/mpesa.png?v3.22.1.5"></span>
                             <span>955100 or 5212121</span>
                         </li>
                                             <li class='airtelmoney'>
-                            <span class="lazy" lazy-src="/img/paybills/airtelmoney.png?v3.22.1.11"></span>
+                            <span class="lazy" lazy-src="/img/paybills/airtelmoney.png?v3.22.1.5"></span>
                             <span>955100 or SPORTPESA </span>
                         </li>
                                     </ul>
@@ -737,21 +787,13 @@
         <div class='cc-body'>
             <h2>Customer Care</h2>
             <p>We offer 24/7 customer care attention to SportPesa players</p>
-            <div class='tel'>
-                                    <a href='tel:0755079079'>
-                        <span>0755 079 079</span>
-                    </a>
-                                    <a href='tel:0709079079'>
-                        <span>0709 079 079</span>
-                    </a>
-                            </div>
-            <div class='email-cc'>
-                                    <a href='mailto:care@ke.sportpesa.com'>
-                        <span style="background: none;">care@ke.sportpesa.com</span>
-                    </a>
-                            </div>
+             <customer-care
+                customer-care-numbers='{"0755079079":"0755 079 079","0709079079":"0709 079 079"}'
+                customer-care-emails='{"care@ke.sportpesa.com":"care@ke.sportpesa.com"}'>
+            </customer-care>
         </div>
     </div>
+
     
     
             <div class="banners">
@@ -884,7 +926,11 @@
                                                                                                                     P.O.BOX 25675-00100 NAIROBI
                                                                                 </li>
                                             <li  class="  link">
-                                                            <a href="http://sportpesanews.com/"  rel="nofollow noopener">
+                                                            <a
+                                    href="http://sportpesanews.com/"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('SportPesa News')"
+                                >
                                                                                                                     SportPesa News
                                                                                         </a>
                                                     </li>
@@ -892,37 +938,65 @@
                                                                                                                     Need help? Contact us
                                                                                 </li>
                                             <li  class="  link">
-                                                            <a href="mailto:care@ke.sportpesa.com"  rel="nofollow noopener">
+                                                            <a
+                                    href="mailto:care@ke.sportpesa.com"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('care@ke.sportpesa.com')"
+                                >
                                                                                                                     care@ke.sportpesa.com
                                                                                         </a>
                                                     </li>
                                             <li  class="footer-icon facebook  link">
-                                                            <a href="https://www.facebook.com/sportpesanews" target="_blank" rel="nofollow noopener">
+                                                            <a
+                                    href="https://www.facebook.com/sportpesanews"
+                                    target="_blank"                                    rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Facebook')"
+                                >
                                                                                                                     Facebook
                                                                                         </a>
                                                     </li>
                                             <li  class="footer-icon twitter  link">
-                                                            <a href="https://twitter.com/sportpesa"  rel="nofollow noopener">
+                                                            <a
+                                    href="https://twitter.com/sportpesa"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Twitter')"
+                                >
                                                                                                                     Twitter
                                                                                         </a>
                                                     </li>
                                             <li  class="footer-icon youtube  link">
-                                                            <a href="https://www.youtube.com/user/sportpesa"  rel="nofollow noopener">
+                                                            <a
+                                    href="https://www.youtube.com/user/sportpesa"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('YouTube')"
+                                >
                                                                                                                     YouTube
                                                                                         </a>
                                                     </li>
                                             <li  class="footer-icon instagram  link">
-                                                            <a href="https://instagram.com/sportpesa"  rel="nofollow noopener">
+                                                            <a
+                                    href="https://instagram.com/sportpesa"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Instagram')"
+                                >
                                                                                                                     Instagram
                                                                                         </a>
                                                     </li>
                                             <li  class="footer-icon whatsapp  link">
-                                                            <a href="https://spp.ke/SPKEWhatsApp" target="_blank" rel="nofollow noopener">
+                                                            <a
+                                    href="https://spp.ke/SPKEWhatsApp"
+                                    target="_blank"                                    rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('WhatsApp')"
+                                >
                                                                                                                     WhatsApp
                                                                                         </a>
                                                     </li>
                                             <li  class="footer-icon tiktok  link">
-                                                            <a href="https://www.tiktok.com/@sportpesa" target="_blank" rel="nofollow noopener">
+                                                            <a
+                                    href="https://www.tiktok.com/@sportpesa"
+                                    target="_blank"                                    rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('TikTok')"
+                                >
                                                                                                                     TikTok
                                                                                         </a>
                                                     </li>
@@ -932,42 +1006,74 @@
             <h3>SUPPORT AND TRUST</h3>
                             <ul>
                                             <li  class="  link">
-                                                            <a href="/how-to-play"  rel="nofollow noopener">
+                                                            <a
+                                    href="/how-to-play"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('How to play')"
+                                >
                                                                                                                     How to play
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="/terms_and_conditions"  rel="nofollow noopener">
+                                                            <a
+                                    href="/terms_and_conditions"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Terms and Conditions')"
+                                >
                                                                                                                     Terms and Conditions
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="/responsible-gaming"  rel="nofollow noopener">
+                                                            <a
+                                    href="/responsible-gaming"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Responsible Gaming')"
+                                >
                                                                                                                     Responsible Gaming
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="/privacy_policy"  rel="nofollow noopener">
+                                                            <a
+                                    href="/privacy_policy"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Privacy Policy')"
+                                >
                                                                                                                     Privacy Policy
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="/cookies-policy"  rel="nofollow noopener">
+                                                            <a
+                                    href="/cookies-policy"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Cookies Policy')"
+                                >
                                                                                                                     Cookies Policy
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="casino-promotions"  rel="nofollow noopener">
+                                                            <a
+                                    href="casino-promotions"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Casino Promotions')"
+                                >
                                                                                                                     Casino Promotions
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="online-aviator-game"  rel="nofollow noopener">
+                                                            <a
+                                    href="online-aviator-game"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('How to play Aviator')"
+                                >
                                                                                                                     How to play Aviator
                                                                                         </a>
                                                     </li>
                                             <li  class="  link">
-                                                            <a href="sportpesa-league"  rel="nofollow noopener">
+                                                            <a
+                                    href="sportpesa-league"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('SportPesa League')"
+                                >
                                                                                                                     SportPesa League
                                                                                         </a>
                                                     </li>
@@ -977,7 +1083,11 @@
             <h3>LEGAL AND COMPLIANCE</h3>
                             <ul>
                                             <li  class=" content-with-image  link">
-                                                            <a href="/adults-only"  rel="nofollow noopener">
+                                                            <a
+                                    href="/adults-only"
+                                                                        rel="nofollow noopener"
+                                    ng-click="Insider.bottomLink('Only 18+ information')"
+                                >
                                                                                         <img lazy-src="https://cdn.ke.sportpesa.com/images/9/9/2/1/1299-5-eng-GB/plus18.png" class="lazy" title="Only 18+ information" alt="Only 18+ information"/>
                                                                                                                     </a>
                                                     </li>
@@ -1045,14 +1155,14 @@
                     <view-changer mobile-device=""></view-changer>
                 </p>
                 <p>Copyright © 2026 Kentech S.L.U. – All rights reserved ®</p>
-                                    <p class="version-display">Version: 3.22.1.11 2026-01-28</p>
+                                    <p class="version-display">Version: 3.22.1.5 2026-01-27</p>
                             </div>
         </div>
     </div>
 </section>
 </footer>
 <div class='lightbox' ng-controller="ToggleMenuController as $ctrl" ng-click="$ctrl.toggleMenu()"></div>
-<a id='back-to-top' title='Back to Top'>&uarr;</a>
+<back-to-top></back-to-top>
 
     <div class="print-layout">
     <div class="print-footer">
@@ -1214,7 +1324,7 @@
         user_id: '',
         user_country_code: 'ke',
         user_has_placed_bets: 'first time bet',
-        version: '3.22.1.11',
+        version: '3.22.1.5',
         multi_jackpot_iframe_url: 'https://jackpot-widget.ke.sportpesa.com/',
         homepage_route_name: 'homepage',
         homepage_route_path: '/en/sports-betting/football-1/',
@@ -1355,14 +1465,14 @@
         </script>
 
                                         
-                    <script type="text/javascript" src="/js/compiled/vendors-b039f79.js?v3.22.1.11"></script>
+                    <script type="text/javascript" src="/js/compiled/vendors-4c341f5.js?v3.22.1.5"></script>
         
-                        <script src="/routes_v3.22.1.11.js?callback=fos.Router.setData"></script>
+                        <script src="/routes_v3.22.1.5.js?callback=fos.Router.setData"></script>
         
                 
-        <script type="text/javascript" src="/i18n/ngLocale-1.7.3/angular-locale_en.js?v3.22.1.11"></script>
+        <script type="text/javascript" src="/i18n/ngLocale-1.7.3/angular-locale_en.js?v3.22.1.5"></script>
 
-                    <script type="text/javascript" src="/js/compiled/app-4535d30.js?v3.22.1.11"></script>
+                    <script type="text/javascript" src="/js/compiled/app-8e60b12.js?v3.22.1.5"></script>
         
                                     <script>
         var schema = {
