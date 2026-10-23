@@ -135,14 +135,31 @@ a:hover {
 	color: white;
 }
 
-body.error404 {
+/* Sticky footer on all pages */
+body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;   /* 100dvh also works if you want mobile-browser-bar accuracy */
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-body.error404 .footer {
+body > main {
+  flex: 1 0 auto;
+}
+
+body .footer {
   margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* WP admin bar offset */
+body.admin-bar {
+  min-height: calc(100dvh - 32px);
+}
+@media (max-width: 782px) {
+  body.admin-bar {
+    min-height: calc(100dvh - 46px);
+  }
 }
 
 .hamburger {
@@ -2438,7 +2455,7 @@ body.error404 .footer {
 </script>
         <script type="text/javascript">
             document.search_ajax_url = 'https://docs.glovoapp.com/wp-admin/admin-ajax.php'
-            document.search_nonce = '6ad8fd5468'
+            document.search_nonce = '3dae67c2c6'
         </script>
 		<script id="app-child-script-main-js" src="https://docs.glovoapp.com/wp-content/themes/wp-delivery-hero-core-v2-child/dist/child.js?ver=1791295972"></script>
 <script id="jquery-lazyloadxt-js-extra">
